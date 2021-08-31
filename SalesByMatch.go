@@ -1,8 +1,8 @@
 package main
 
 import (
-	"errors"
 	"fmt"
+	"sort"
 )
 
 /*
@@ -14,71 +14,50 @@ import (
  *  2. INTEGER_ARRAY ar
  */
 
-func sockMerchant(n int32, ar []int32) int32 {
+func sockMerchant(n int, ar []int) int {
 
 	// Write your code here
 
 	var k, _ = SortArray(ar)
-	var result int32 = 0
+	var result int = 0
 
-	for i := 0; i < len(k) -1; i++ {
+	for i := 0; i < len(k)-1; i++ {
 
-		fmt.Println("Sorted Array")
-		fmt.Print((k[i]))
-		
-		if(k[i] == k[i+1]){
-			result +=1;
-			i ++
-		} 
+		if k[i] == k[i+1] {
+			result += 1
+			i++
+		}
+
 	}
+
 	fmt.Println(result)
 
 	return result
 }
 
-func SortArray(ar []int32) ([]int32, error) {
+func SortArray(ar []int) ([]int, error) {
 
-	var isDone = false
+	sort.Ints(ar[:])
 
-	var emptyArray error
-
-	if(ar == nil){
-		emptyArray = errors.New("Empty array")
-	}
-
-	for !isDone {
-		isDone = true
-		var i = 0
-
-		for i < len(ar) - 1 {
-			if ar[i] > ar[i+1] {
-				ar[i], ar[i+1] = ar[i+1], ar[i]
-			}
-			i++
-		}
-	}
-
-	return ar, emptyArray
+	return ar, nil
 }
 
 func main() {
 
-	var i int32
+	var i int
 
 	_, err := fmt.Scan(&i)
-
 
 	if err != nil {
 		fmt.Print(err.Error())
 	}
 
-	var array = make([]int32, i)  
+	var array = make([]int, i)
 
+	var j int = 0
 
-	var j int32 = 0
-	
 	for ; j < i; j++ {
-		var element int32
+		var element int
 		_, err := fmt.Scan(&element)
 
 		if err != nil {
