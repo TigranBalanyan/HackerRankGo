@@ -1,71 +1,71 @@
-package main
+// package main
 
-import (
-	"fmt"
-	"sort"
-)
+// import (
+// 	"fmt"
+// 	"sort"
+// )
 
-/*
- * Complete the 'sockMerchant' function below.
- *
- * The function is expected to return an INTEGER.
- * The function accepts following parameters:
- *  1. INTEGER n
- *  2. INTEGER_ARRAY ar
- */
+// /*
+//  * Complete the 'sockMerchant' function below.
+//  *
+//  * The function is expected to return an INTEGER.
+//  * The function accepts following parameters:
+//  *  1. INTEGER n
+//  *  2. INTEGER_ARRAY ar
+//  */
 
-func sockMerchant(n int, ar []int) int {
+// func sockMerchant(n int, ar []int) int {
 
-	// Write your code here
+// 	// Write your code here
 
-	var k, _ = SortArray(ar)
-	var result int = 0
+// 	var k, _ = SortArray(ar)
+// 	var result int = 0
 
-	for i := 0; i < len(k)-1; i++ {
+// 	for i := 0; i < len(k)-1; i++ {
 
-		if k[i] == k[i+1] {
-			result += 1
-			i++
-		}
+// 		if k[i] == k[i+1] {
+// 			result += 1
+// 			i++
+// 		}
 
-	}
+// 	}
 
-	fmt.Println(result)
+// 	fmt.Println(result)
 
-	return result
-}
+// 	return result
+// }
 
-func SortArray(ar []int) ([]int, error) {
+// func SortArray(ar []int) ([]int, error) {
 
-	sort.Ints(ar[:])
+// 	sort.Ints(ar[:])
 
-	return ar, nil
-}
+// 	return ar, nil
+// }
 
-func main() {
+// func main() {
 
-	var i int
+// 	var i int
 
-	_, err := fmt.Scan(&i)
+// 	_, err := fmt.Scan(&i)
 
-	if err != nil {
-		fmt.Print(err.Error())
-	}
+// 	if err != nil {
+// 		fmt.Print(err.Error())
+// 	}
 
-	var array = make([]int, i)
+// 	var array = make([]int, i)
 
-	var j int = 0
+// 	var j int = 0
 
-	for ; j < i; j++ {
-		var element int
-		_, err := fmt.Scan(&element)
+// 	for ; j < i; j++ {
+// 		var element int
+// 		_, err := fmt.Scan(&element)
 
-		if err != nil {
-			fmt.Print(err.Error())
-			break
-		}
-		array[j] = element
-	}
+// 		if err != nil {
+// 			fmt.Print(err.Error())
+// 			break
+// 		}
+// 		array[j] = element
+// 	}
 
-	sockMerchant(i, array)
-}
+// 	sockMerchant(i, array)
+// }
